@@ -12,6 +12,9 @@ load_dotenv()
 app = Flask(__name__)
 api_key = os.getenv('api_key')
 
+@app.route('/test', methods=['GET'])
+def get_test():
+        return jsonify({'message': 'Test worked'}), 200
 
 @app.route('/upload', methods=['POST'])
 def upload_image():
